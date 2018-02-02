@@ -1,0 +1,31 @@
+<!-- <link href="//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	rel="stylesheet" /> -->
+<link
+        href="//cdn.bootcss.com/limonte-sweetalert2/6.4.1/sweetalert2.min.css"
+        rel="stylesheet">
+<link href="../../../../static/admin/css/tip.min.css" rel="stylesheet">
+<div style="text-align: center">
+    <button class="tip-button" onclick="showTipQR();">请我吃糖</button>
+</div>
+<!--<button class="tip-button" data-toggle="modal" data-target="#tipQR" onclick="showTipQR();">请我吃糖</button>-->
+
+<!--<script src="//cdn.bootcss.com/jquery/2.2.3/jquery.min.js"></script>-->
+
+<script
+        src="/static/admin/plugins/limonte-sweetalert2/6.4.1/sweetalert2.min.js"></script>
+<script type="text/javascript">
+
+    /**
+     * 请我吃糖
+     * @param themeName
+     */
+    function showTipQR() {
+        swal({
+            title: "谢谢请我吃糖",
+            /* text : "这是自定义图标。", */
+            showConfirmButton: false,
+            imageUrl: "/static/image/gathering.jpg",
+            /* imageSize : "300x300" */
+        });
+    }
+</script>

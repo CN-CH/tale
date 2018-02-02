@@ -57,7 +57,8 @@ public final class Commons {
      * @return
      */
     public static String site_url() {
-        return site_url("");
+        // 返回绝对路径修改为返回相对路径 modify bu chenhao 20180201
+        return site_url("/");
     }
 
     /**
@@ -76,7 +77,9 @@ public final class Commons {
      * @return
      */
     public static String site_url(String sub) {
-        return site_option("site_url") + sub;
+        // 返回绝对路径修改为返回相对路径 modify bu chenhao 20180201
+        return sub;
+        // return site_option("site_url") + sub;
     }
 
     /**

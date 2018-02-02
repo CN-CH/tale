@@ -13,6 +13,7 @@
     <div id="post-content" class="post-content" itemprop="articleBody">
         <p class="post-tags">${show_tags()}</p>
         ${show_content()}
+    	#include('./partial/tip.html')
         <p class="post-info">
             本文由 <a href="">${theme_option('author') ?! 'biezhi'}</a> 创作，采用 <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank"
                                                rel="external nofollow">知识共享署名4.0</a> 国际许可协议进行许可<br>本站文章除注明转载/出处外，均为本站原创或翻译，转载前请务必署名<br>最后编辑时间为:
@@ -30,8 +31,8 @@
             <span class="bottom-bar-item bottom-bar-qrcode"><a href="//pan.baidu.com/share/qrcode?w=300&amp;h=300&amp;url=${permalink()}" target="_blank" rel="nofollow">QRcode</a></span>
         </div>
         <div class="bottom-bar-items right">
-            <span class="bottom-bar-item">${thePrev('→')}</span>
-            <span class="bottom-bar-item">${theNext('←')}</span>
+            <span class="bottom-bar-item">${thePrev('←')}</span>
+            <span class="bottom-bar-item">${theNext('→')}</span>
             <span class="bottom-bar-item"><a href="#footer">↓</a></span>
             <span class="bottom-bar-item"><a href="#">↑</a></span>
         </div>
