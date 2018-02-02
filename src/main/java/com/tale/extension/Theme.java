@@ -344,7 +344,7 @@ public final class Theme {
      */
     public static Contents article_next() {
         Contents cur = current_article();
-        return null != cur ? siteService.getNhContent(Types.NEXT, cur.getCid()) : null;
+        return null != cur ? siteService.getNhContent(Types.NEXT, cur.getCreated()) : null;
     }
 
     /**
@@ -354,7 +354,7 @@ public final class Theme {
      */
     public static Contents article_prev() {
         Contents cur = current_article();
-        return null != cur ? siteService.getNhContent(Types.PREV, cur.getCid()) : null;
+        return null != cur ? siteService.getNhContent(Types.PREV, cur.getCreated()) : null;
     }
 
     /**
@@ -717,6 +717,30 @@ public final class Theme {
         Contents contents = current_article();
         if (null != contents && Types.PAGE.equals(contents.getType()) && contents.getSlug().equals(pageName)) {
             return true;
+        }
+        if (TaleConst.SLUG_HOME.equals(pageName)) {
+            Boolean isHome = WebContext.request().attribute("is_home");
+            if (null != isHome && isHome) {
+                return true;
+            }
+        }
+        if (TaleConst.SLUG_ARCHIVES.equals(pageName)) {
+            Boolean isArchives = WebContext.request().attribute("is_archive");
+            if (null != isArchives && isArchives) {
+                return true;
+            }
+        }
+        if (TaleConst.SLUG_CATEGRORIES.equals(pageName)) {
+            Boolean isCategory = WebContext.request().attribute("is_category");
+            if (null != isCategory && isCategory) {
+                return true;
+            }
+        }
+        if (TaleConst.SLUG_TAGS.equals(pageName)) {
+            Boolean isTag = WebContext.request().attribute("is_tag");
+            if (null != isTag && isTag) {
+                return true;
+            }
         }
         return false;
     }
